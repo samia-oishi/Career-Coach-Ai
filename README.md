@@ -2,6 +2,10 @@
 
 CareerCoach Ai is an AI-powered full-stack career guidance application for discovering technology careers, generating resume summaries, receiving personalized career recommendations, saving career paths, and tracking a career journey through user and admin dashboards.
 
+##Admin credentials
+email: scribe.oishi@gmail.com
+pass: SamiaAlamOishi123!
+
 ## Tech Stack
 
 ### Frontend
