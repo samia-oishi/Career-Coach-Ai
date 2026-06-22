@@ -20,7 +20,6 @@ export type AppUser = {
   location?: string;
   settings: {
     theme: 'light' | 'dark' | 'system';
-    emailNotifications: boolean;
   };
   createdAt: Date;
   updatedAt: Date;
