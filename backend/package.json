@@ -1,0 +1,25 @@
+{
+  "name": "careercoach-ai-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --import tsx --watch src/server.ts",
+    "build": "tsc",
+    "start": "node --env-file=.env dist/server.js",
+    "type-check": "tsc --noEmit",
+    "seed": "node --env-file=.env --import tsx src/seed/seed.ts"
+  },
+  "dependencies": {
+    "@clerk/backend": "latest",
+    "express": "latest",
+    "mongodb": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
