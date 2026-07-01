@@ -55,6 +55,8 @@ export type AppUser = {
   careerGoal?: string;
   location?: string;
   settings?: { theme?: 'light' | 'dark' | 'system' };
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type SavedCareer = {
