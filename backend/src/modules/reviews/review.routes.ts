@@ -12,7 +12,7 @@ import { reviewCreateSchema, reviewUpdateSchema } from './review.schemas.js';
 export const reviewsRouter = Router();
 
 reviewsRouter.get('/career/:careerId', asyncHandler(async (req, res) => {
-  const { careerId } = req.params;
+  const careerId = req.params.careerId as string;
   if (!ObjectId.isValid(careerId)) throw new AppError(400, 'INVALID_CAREER', 'Invalid career id.');
   
   const reviews = await getCollection<Review>('reviews')

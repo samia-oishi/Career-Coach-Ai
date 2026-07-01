@@ -519,8 +519,8 @@ const careers: Career[] = careerTemplates.map(
       `Senior ${title}`,
       "Lead or specialist path",
     ],
-    tools: skills.slice(0, 4),
-    learningPath: generateLearningPath(title, skills, category),
+    tools: [...skills].slice(0, 4),
+    learningPath: generateLearningPath(title, [...skills], category),
     relatedCareerSlugs: careerTemplates
       .filter((item) => item[2] === category && item[0] !== slug)
       .slice(0, 3)
