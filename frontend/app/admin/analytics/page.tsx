@@ -64,7 +64,10 @@ export default function AdminAnalyticsPage() {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ _id, count }) => `${_id}: ${count}`}
+                  label={(props) => {
+                    const data = props.payload as { _id: string; count: number };
+                    return `${data._id}: ${data.count}`;
+                  }}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="count"
