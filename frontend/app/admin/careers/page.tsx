@@ -156,7 +156,7 @@ export default function AdminCareersPage() {
                 </td>
                 <td className="p-4">
                   <button
-                    onClick={() => toggleStatus(career._id!, career.status)}
+                    onClick={() => toggleStatus(career._id!, career.status || 'draft')}
                     className="rounded-lg border px-3 py-1 text-sm font-semibold transition hover:bg-gray-100"
                     style={{ borderColor: 'var(--border)' }}
                   >
