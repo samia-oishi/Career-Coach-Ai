@@ -1,14 +1,12 @@
 import axios from 'axios';
 import type { ApiResponse, Blog, Career } from './types';
 
-// Determine base URL based on environment
+// Backend URL - MUST be full URL for cross-domain requests
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+
+// Always use full backend URL - required for separate Vercel deployments
 const getBaseURL = () => {
-  // Client-side: use relative URL (Next.js rewrite handles it)
-  if (typeof window !== 'undefined') {
-    return '/api/v1';
-  }
-  // Server-side: must use full URL
-  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+  return BACKEND_URL;
 };
 
 export const api = axios.create({
@@ -32,8 +30,7 @@ api.interceptors.response.use(
 
 export const fetchCareers = async (params?: Record<string, string>) => {
   const query = params ? `?${new URLSearchParams(params).toString()}` : '';
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
-  const response = await fetch(`${baseUrl}/careers${query}`, {
+  const response = await fetch(`${BACKEND_URL}/careers${query}`, {
     next: { revalidate: 60 },
   });
   if (!response.ok) throw new Error('Failed to load careers');
@@ -41,8 +38,7 @@ export const fetchCareers = async (params?: Record<string, string>) => {
 };
 
 export const fetchFeaturedCareers = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
-  const response = await fetch(`${baseUrl}/careers/featured`, {
+  const response = await fetch(`${BACKEND_URL}/careers/featured`, {
     next: { revalidate: 60 },
   });
   if (!response.ok) throw new Error('Failed to load featured careers');
@@ -50,8 +46,7 @@ export const fetchFeaturedCareers = async () => {
 };
 
 export const fetchBlogs = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
-  const response = await fetch(`${baseUrl}/blogs`, {
+  const response = await fetch(`${BACKEND_URL}/blogs`, {
     next: { revalidate: 60 },
   });
   if (!response.ok) throw new Error('Failed to load blogs');
