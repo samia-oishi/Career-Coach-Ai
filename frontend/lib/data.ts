@@ -20,6 +20,7 @@ export const fallbackCareers: Career[] = [
     learningPath: ['Master HTML, CSS, and JavaScript.', 'Build React projects.', 'Learn accessibility and performance.'],
     relatedCareerSlugs: ['full-stack-developer', 'ui-ux-designer'],
     isFeatured: true,
+    status: 'published',
   },
   {
     slug: 'data-analyst',
@@ -40,6 +41,7 @@ export const fallbackCareers: Career[] = [
     learningPath: ['Learn spreadsheet analysis.', 'Practice SQL daily.', 'Build dashboard case studies.'],
     relatedCareerSlugs: ['data-scientist', 'business-intelligence-developer'],
     isFeatured: true,
+    status: 'published',
   },
   {
     slug: 'cybersecurity-analyst',
@@ -60,6 +62,7 @@ export const fallbackCareers: Career[] = [
     learningPath: ['Learn networking.', 'Practice Linux fundamentals.', 'Study common attack patterns.'],
     relatedCareerSlugs: ['security-engineer', 'cloud-security-specialist'],
     isFeatured: true,
+    status: 'published',
   },
   {
     slug: 'ai-product-engineer',
@@ -80,6 +83,7 @@ export const fallbackCareers: Career[] = [
     learningPath: ['Build full-stack apps.', 'Learn prompt evaluation.', 'Add AI features safely.'],
     relatedCareerSlugs: ['machine-learning-engineer', 'full-stack-developer'],
     isFeatured: true,
+    status: 'published',
   },
 ];
 
@@ -94,6 +98,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['career', 'planning'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 5,
+    status: 'published',
     publishedAt: '2026-06-01',
   },
   {
@@ -106,6 +111,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['resume', 'job search'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 4,
+    status: 'published',
     publishedAt: '2026-06-03',
   },
   {
@@ -118,6 +124,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['developer', 'skills'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 4,
+    status: 'published',
     publishedAt: '2026-06-05',
   },
   {
@@ -130,6 +137,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['data', 'analytics'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 5,
+    status: 'published',
     publishedAt: '2026-06-07',
   },
   {
@@ -142,6 +150,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['security', 'roadmap'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 6,
+    status: 'published',
     publishedAt: '2026-06-09',
   },
   {
@@ -154,6 +163,7 @@ export const fallbackBlogs: Blog[] = [
     tags: ['ai', 'productivity'],
     authorName: 'CareerCoach Ai Editorial Team',
     readTimeMinutes: 4,
+    status: 'published',
     publishedAt: '2026-06-11',
   },
 ];
