@@ -6,6 +6,10 @@ CareerCoach Ai is an AI-powered full-stack career guidance application for disco
 email: scribe.oishi@gmail.com
 pass: SamiaAlamOishi123!
 
+##User credentials 
+email: uxquery@gmail.com 
+pass: UxQuery123!
+
 ## Tech Stack
 
 ### Frontend
