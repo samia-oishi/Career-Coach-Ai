@@ -15,8 +15,28 @@ import { adminRouter } from './modules/admin/admin.routes.js';
 
 export const app = express();
 
+// CORS configuration for multiple origins (local + Vercel deployments)
+const allowedOrigins = [
+  'http://localhost:3000',
+  env.FRONTEND_URL,
+].filter(Boolean);
+
+// Add Vercel preview URLs pattern if frontend is on Vercel
+if (env.FRONTEND_URL && env.FRONTEND_URL.includes('vercel.app')) {
+  const baseUrl = env.FRONTEND_URL.replace(/-git-[\w-]+/, '');
+  allowedOrigins.push(baseUrl);
+}
+
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', env.FRONTEND_URL);
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.some(allowed => origin === allowed || origin.startsWith(allowed.replace(/\/+$/, '')))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else if (origin && (origin.includes('vercel.app') || origin.includes('localhost'))) {
+    // Allow all Vercel preview deployments and localhost
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', env.FRONTEND_URL || '*');
+  }
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
