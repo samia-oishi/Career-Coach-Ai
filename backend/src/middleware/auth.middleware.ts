@@ -5,6 +5,7 @@ import { getCollection } from '../config/database.js';
 import { env } from '../config/env.js';
 import { AppError } from './error.middleware.js';
 import type { AppUser, Role } from '../types.js';
+import { logger } from '../utils/logger.js';
 
 declare global {
   namespace Express {
@@ -17,33 +18,46 @@ declare global {
 
 
 export const requireAuth = async (req: Request, _res: Response, next: NextFunction) => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
 
-  if (!token) {
-    throw new AppError(401, 'UNAUTHENTICATED', 'Please sign in to continue.');
+    if (!token) {
+      throw new AppError(401, 'UNAUTHENTICATED', 'Please sign in to continue.');
+    }
+
+    if (!env.CLERK_SECRET_KEY) {
+      logger.error('CLERK_SECRET_KEY is not configured');
+      throw new AppError(500, 'AUTH_NOT_CONFIGURED', 'Authentication is not configured on the server.');
+    }
+
+    let payload;
+    try {
+      payload = await verifyToken(token, { secretKey: env.CLERK_SECRET_KEY });
+    } catch (verifyError) {
+      logger.warn('Token verification failed', verifyError);
+      throw new AppError(401, 'INVALID_TOKEN', 'Your session could not be verified. Please sign in again.');
+    }
+    
+    const clerkId = payload.sub;
+
+    if (!clerkId) {
+      throw new AppError(401, 'INVALID_TOKEN', 'Your session could not be verified.');
+    }
+
+    const users = getCollection<AppUser>('users');
+    const user = await users.findOne({ clerkId });
+
+    if (!user?._id) {
+      logger.warn(`User not found for clerkId: ${clerkId}`);
+      throw new AppError(404, 'USER_NOT_SYNCED', 'Your account is not synced yet. Please refresh and try again.');
+    }
+
+    req.auth = { clerkId };
+    req.user = user as AppUser & { _id: ObjectId };
+    next();
+  } catch (error) {
+    next(error);
   }
-
-  if (!env.CLERK_SECRET_KEY) {
-    throw new AppError(500, 'AUTH_NOT_CONFIGURED', 'Authentication is not configured on the server.');
-  }
-
-  const payload = await verifyToken(token, { secretKey: env.CLERK_SECRET_KEY });
-  const clerkId = payload.sub;
-
-  if (!clerkId) {
-    throw new AppError(401, 'INVALID_TOKEN', 'Your session could not be verified.');
-  }
-
-  const users = getCollection<AppUser>('users');
-  const user = await users.findOne({ clerkId });
-
-  if (!user?._id) {
-    throw new AppError(404, 'USER_NOT_SYNCED', 'Your account is not synced yet. Please refresh and try again.');
-  }
-
-  req.auth = { clerkId };
-  req.user = user as AppUser & { _id: ObjectId };
-  next();
 };
 
 export const optionalAuth = async (req: Request, _res: Response, next: NextFunction) => {

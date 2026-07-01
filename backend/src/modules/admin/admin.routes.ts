@@ -40,9 +40,29 @@ adminRouter.get('/careers', asyncHandler(async (_req, res) => {
   sendSuccess(res, careers);
 }));
 
+adminRouter.patch('/careers/:id/status', asyncHandler(async (req, res) => {
+  if (typeof req.params.id !== 'string' || !ObjectId.isValid(req.params.id)) throw new AppError(400, 'INVALID_ID', 'Invalid career id.');
+  const status = req.body.status === 'published' ? 'published' : 'draft';
+  await getCollection<Career>('careers').updateOne(
+    { _id: new ObjectId(req.params.id as string) },
+    { $set: { status, updatedAt: new Date() } }
+  );
+  sendSuccess(res, { updated: true });
+}));
+
 adminRouter.get('/blogs', asyncHandler(async (_req, res) => {
   const blogs = await getCollection<Blog>('blogs').find().sort({ createdAt: -1 }).toArray();
   sendSuccess(res, blogs);
+}));
+
+adminRouter.patch('/blogs/:id/status', asyncHandler(async (req, res) => {
+  if (typeof req.params.id !== 'string' || !ObjectId.isValid(req.params.id)) throw new AppError(400, 'INVALID_ID', 'Invalid blog id.');
+  const status = req.body.status === 'published' ? 'published' : 'draft';
+  await getCollection<Blog>('blogs').updateOne(
+    { _id: new ObjectId(req.params.id as string) },
+    { $set: { status, updatedAt: new Date() } }
+  );
+  sendSuccess(res, { updated: true });
 }));
 
 adminRouter.get('/analytics', asyncHandler(async (_req, res) => {

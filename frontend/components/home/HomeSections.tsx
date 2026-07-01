@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CareerCard } from '@/components/cards/CareerCard';
 import type { Blog, Career } from '@/lib/types';
+import { testimonials } from '@/lib/data';
 import { MotionReveal } from './MotionReveal';
 
 type FAQ = { question: string; answer: string };
@@ -22,10 +23,12 @@ export function FeaturedCareersSection({ careers }: { careers: Career[] }) {
         </div>
         <Link href="/careers" className="btn-light focus-ring w-fit rounded-2xl px-5 py-3 font-bold">View all careers</Link>
       </MotionReveal>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
         {careers.slice(0, 4).map((career, index) => (
           <MotionReveal className="h-full" delay={index * 0.04} key={career.slug}>
-            <CareerCard career={career} />
+            <div className="h-full">
+              <CareerCard career={career} />
+            </div>
           </MotionReveal>
         ))}
       </div>
@@ -140,6 +143,69 @@ export function FinalCTA() {
           </div>
         </div>
       </MotionReveal>
+    </section>
+  );
+}
+
+export function StatisticsSection() {
+  const stats = [
+    { value: '35+', label: 'Career Paths', description: 'Curated technology roles' },
+    { value: '8', label: 'Career Guides', description: 'Expert-written articles' },
+    { value: '2', label: 'AI Tools', description: 'Resume & recommendations' },
+    { value: '100%', label: 'Free Access', description: 'Explore without limits' },
+  ];
+
+  return (
+    <section className="container-page py-16 md:py-20">
+      <MotionReveal className="text-center">
+        <p className="section-eyebrow">Platform at a glance</p>
+        <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-5xl">Numbers that matter</h2>
+      </MotionReveal>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {stats.map((stat, index) => (
+          <MotionReveal key={stat.label} delay={index * 0.1}>
+            <div className="card-surface p-6 text-center">
+              <strong className="text-5xl font-black" style={{ color: 'var(--primary)' }}>{stat.value}</strong>
+              <p className="mt-2 font-bold">{stat.label}</p>
+              <p className="text-sm" style={{ color: 'var(--muted)' }}>{stat.description}</p>
+            </div>
+          </MotionReveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function TestimonialsSection() {
+  return (
+    <section className="container-page py-16 md:py-20">
+      <MotionReveal className="text-center">
+        <p className="section-eyebrow">Success stories</p>
+        <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-5xl">What our users say</h2>
+      </MotionReveal>
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <MotionReveal key={testimonial.name} delay={index * 0.1}>
+            <div className="card-surface h-full p-6">
+              <div className="flex items-center gap-1 text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i}>★</span>
+                ))}
+              </div>
+              <p className="mt-4 text-lg leading-7 italic" style={{ color: 'var(--muted)' }}>&ldquo;{testimonial.quote}&rdquo;</p>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full font-bold" style={{ background: 'var(--primary)', color: 'white' }}>
+                  {testimonial.name.split(' ').map((n) => n[0]).join('')}
+                </div>
+                <div>
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-sm" style={{ color: 'var(--muted)' }}>{testimonial.role}</p>
+                </div>
+              </div>
+            </div>
+          </MotionReveal>
+        ))}
+      </div>
     </section>
   );
 }

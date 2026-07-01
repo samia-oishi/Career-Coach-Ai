@@ -11,6 +11,23 @@ import { reviewCreateSchema, reviewUpdateSchema } from './review.schemas.js';
 
 export const reviewsRouter = Router();
 
+reviewsRouter.get('/career/:careerId', asyncHandler(async (req, res) => {
+  const { careerId } = req.params;
+  if (!ObjectId.isValid(careerId)) throw new AppError(400, 'INVALID_CAREER', 'Invalid career id.');
+  
+  const reviews = await getCollection<Review>('reviews')
+    .aggregate([
+      { $match: { careerId: new ObjectId(careerId), isApproved: true } },
+      { $lookup: { from: 'users', localField: 'userId', foreignField: '_id', as: 'user' } },
+      { $unwind: '$user' },
+      { $project: { _id: 1, rating: 1, title: 1, comment: 1, pros: 1, cons: 1, createdAt: 1, 'user.firstName': 1, 'user.lastName': 1 } },
+      { $sort: { createdAt: -1 } },
+    ])
+    .toArray();
+  
+  sendSuccess(res, reviews);
+}));
+
 reviewsRouter.post('/', requireAuth, validate(reviewCreateSchema), asyncHandler(async (req, res) => {
   if (!ObjectId.isValid(req.body.careerId)) throw new AppError(400, 'INVALID_CAREER', 'Invalid career id.');
   const careerId = new ObjectId(req.body.careerId);

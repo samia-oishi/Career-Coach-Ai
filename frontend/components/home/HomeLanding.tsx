@@ -6,6 +6,8 @@ import {
   FinalCTA,
   HowItWorksSection,
   LatestArticlesSection,
+  StatisticsSection,
+  TestimonialsSection,
 } from './HomeSections';
 
 type FAQ = { question: string; answer: string };
@@ -22,8 +24,10 @@ export function HomeLanding({
   return (
     <main className="premium-shell">
       <HeroSection />
+      <StatisticsSection />
       <FeaturedCareersSection careers={careers} />
       <HowItWorksSection />
+      <TestimonialsSection />
       <LatestArticlesSection blogs={blogs} />
       <FAQSection faqs={faqs} />
       <FinalCTA />

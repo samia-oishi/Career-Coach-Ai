@@ -54,7 +54,7 @@ export function CareerExplorer({ careers }: { careers: Career[] }) {
       </div>
 
       {!careers.length ? <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{Array.from({ length: 8 }).map((_, index) => <SkeletonCard key={index} />)}</div> : null}
-      {visible.length ? <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{visible.map((career) => <CareerCard key={career.slug} career={career} />)}</div> : <div className="card-surface mt-8 p-8 text-center"><h2 className="text-xl font-bold">No careers found</h2><p className="mt-2" style={{ color: 'var(--muted)' }}>Try removing one filter or searching a broader skill.</p></div>}
+      {visible.length ? <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">{visible.map((career) => <div key={career.slug} className="h-full"><CareerCard career={career} /></div>)}</div> : <div className="card-surface mt-8 p-8 text-center"><h2 className="text-xl font-bold">No careers found</h2><p className="mt-2" style={{ color: 'var(--muted)' }}>Try removing one filter or searching a broader skill.</p></div>}
 
       <div className="mt-8 flex items-center justify-center gap-3">
         <button className="rounded-xl border px-4 py-2 disabled:opacity-50" style={{ borderColor: 'var(--border)' }} disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>Previous</button>

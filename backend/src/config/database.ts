@@ -1,5 +1,6 @@
 import { MongoClient, type Collection, type Db, type Document } from 'mongodb';
 import { env } from './env.js';
+import { logger } from '../utils/logger.js';
 
 let client: MongoClient | null = null;
 let db: Db | null = null;
@@ -7,11 +8,23 @@ let db: Db | null = null;
 export const connectDatabase = async () => {
   if (db) return db;
 
-  client = new MongoClient(env.MONGODB_URI);
-  await client.connect();
-  db = client.db();
-  await createIndexes(db);
-  return db;
+  try {
+    client = new MongoClient(env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 10000,
+      connectTimeoutMS: 10000,
+      socketTimeoutMS: 10000,
+    });
+    await client.connect();
+    db = client.db();
+    await createIndexes(db).catch((err) => {
+      logger.warn('Index creation warning (non-fatal)', err);
+    });
+    logger.info('Database connected successfully');
+    return db;
+  } catch (error) {
+    logger.error('Database connection failed', error);
+    throw new Error('Failed to connect to database. Check your MONGODB_URI.');
+  }
 };
 
 export const getDb = () => {

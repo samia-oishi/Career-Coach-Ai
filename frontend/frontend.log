@@ -1,0 +1,723 @@
+
+> careercoach-ai-frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.10.232:3000
+- Environments: .env.local
+✓ Ready in 31.4s
+
+Attention: Clerk collects telemetry data from its SDKs when connected to development instances.
+The data collected is used to inform Clerk's product roadmap.
+To learn more, including how to opt-out from the telemetry program, visit: https://clerk.com/docs/telemetry.
+
+○ Compiling / ...
+ HEAD / 200 in 10.9s (next.js: 7.1s, proxy.ts: 673ms, application-code: 3.1s)
+ GET / 200 in 10.9s (next.js: 8.4s, proxy.ts: 680ms, application-code: 1809ms)
+✓ Finished writing to filesystem cache in 18.4s
+ GET / 200 in 408ms (next.js: 57ms, proxy.ts: 30ms, application-code: 321ms)
+ GET /favicon.svg 404 in 343ms (next.js: 200ms, application-code: 143ms)
+[browser] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview (https://unified-turkey-72.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:12:6133)
+ GET /sign-in 200 in 1661ms (next.js: 1329ms, proxy.ts: 278ms, application-code: 55ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /sign-in/SignIn_clerk_catchall_check_1782906283520 200 in 219ms (next.js: 21ms, proxy.ts: 13ms, application-code: 185ms)
+ POST /sign-in 200 in 129ms (next.js: 24ms, proxy.ts: 22ms, application-code: 84ms)
+  └─ ƒ invalidateCacheAction() in 10ms node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js
+ GET / 200 in 5.8s (next.js: 1552ms, proxy.ts: 3.3s, application-code: 1012ms)
+ GET / 200 in 676ms (next.js: 8ms, proxy.ts: 11ms, application-code: 657ms)
+○ Compiling /dashboard ...
+ GET /dashboard 200 in 16.4s (next.js: 16.3s, proxy.ts: 48ms, application-code: 61ms)
+Failed to proxy http://localhost:5000/api/v1/users/sync Error: read ECONNRESET
+    at ignore-listed frames {
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+Error: read ECONNRESET
+    at ignore-listed frames {
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+Failed to proxy http://localhost:5000/api/v1/users/sync AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5000
+        at <unknown> (Error: connect ECONNREFUSED ::1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 5000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:5000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5000
+        at <unknown> (Error: connect ECONNREFUSED ::1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 5000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:5000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5000
+    }
+  ]
+}
+Failed to proxy http://localhost:5000/api/v1/users/sync AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5000
+        at <unknown> (Error: connect ECONNREFUSED ::1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 5000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:5000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5000
+        at <unknown> (Error: connect ECONNREFUSED ::1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 5000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:5000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:5000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5000
+    }
+  ]
+}
+[browser] Role check failed AxiosError: Request failed with status code 500
+    at async fetchWithRetry (components/dashboard/RoleGuard.tsx:24:12)
+    at async RoleGuard.useEffect.checkRole (components/dashboard/RoleGuard.tsx:65:9)
+  22 | ): Promise<T> => {
+  23 |   try {
+> 24 |     return await fn();
+     |            ^
+  25 |   } catch (error) {
+  26 |     if (retries <= 1) throw error;
+  27 |     await new Promise((resolve) => setTimeout(resolve, delay)); (components/dashboard/RoleGuard.tsx:92:17)
+ GET /dashboard 200 in 2.1s (next.js: 14ms, proxy.ts: 19ms, application-code: 2.1s)
+[browser] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview (https://unified-turkey-72.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:12:6133)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+○ Compiling /admin/ai-usage ...
+ GET /admin/ai-usage 200 in 4.3s (next.js: 4.2s, proxy.ts: 25ms, application-code: 110ms)
+ GET /admin/ai-usage 200 in 724ms (next.js: 170ms, proxy.ts: 479ms, application-code: 75ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /admin/careers 200 in 2.2s (next.js: 2.1s, proxy.ts: 21ms, application-code: 34ms)
+○ Compiling /dashboard/profile ...
+✓ Finished writing to filesystem cache in 15.6s
+ GET /dashboard/profile 200 in 15.6s (next.js: 15.5s, proxy.ts: 37ms, application-code: 135ms)
+○ Compiling /admin/content-review ...
+ GET /admin/content-review 200 in 4.2s (next.js: 3.9s, proxy.ts: 43ms, application-code: 248ms)
+○ Compiling /admin/users ...
+✓ Finished writing to filesystem cache in 12.8s
+ GET /admin/users 200 in 10.4s (next.js: 10.2s, proxy.ts: 33ms, application-code: 80ms)
+ GET /admin/users 200 in 108ms (next.js: 16ms, proxy.ts: 30ms, application-code: 62ms)
+○ Compiling /dashboard/recommendations ...
+ GET /dashboard/profile 200 in 83ms (next.js: 11ms, proxy.ts: 33ms, application-code: 39ms)
+✓ Finished writing to filesystem cache in 16.5s
+ GET /dashboard/resume-summary 200 in 8.1s (next.js: 7.5s, proxy.ts: 19ms, application-code: 563ms)
+ GET /dashboard/recommendations 200 in 10.3s (next.js: 10.0s, proxy.ts: 11ms, application-code: 359ms)
+○ Compiling /dashboard/settings ...
+✓ Finished writing to filesystem cache in 11.8s
+ GET /dashboard/settings 200 in 5.0s (next.js: 5.0s, proxy.ts: 27ms, application-code: 41ms)
+ GET /dashboard/settings 200 in 55ms (next.js: 8ms, proxy.ts: 19ms, application-code: 29ms)
+✓ Finished writing to filesystem cache in 15.7s
+ GET /admin/users 200 in 161ms (next.js: 57ms, proxy.ts: 66ms, application-code: 39ms)
+ GET /admin/users 200 in 165ms (next.js: 12ms, proxy.ts: 65ms, application-code: 87ms)
+✓ Finished filesystem cache database compaction in 23.5s
+ POST /admin/users 200 in 148ms (next.js: 10ms, proxy.ts: 29ms, application-code: 109ms)
+  └─ ƒ invalidateCacheAction() in 9ms node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js
+✓ Finished filesystem cache database compaction in 42s
+ GET / 200 in 3.7s (next.js: 3.2s, proxy.ts: 21ms, application-code: 500ms)
+ GET / 200 in 461ms (next.js: 16ms, proxy.ts: 311ms, application-code: 134ms)
+ GET /sign-in 200 in 3.0s (next.js: 2.8s, proxy.ts: 29ms, application-code: 143ms)
+ GET /sign-in/SignIn_clerk_catchall_check_1782906686640 200 in 1507ms (next.js: 31ms, proxy.ts: 30ms, application-code: 1445ms)
+○ Compiling /sign-up/[[...sign-up]] ...
+ GET /sign-up 200 in 7.8s (next.js: 7.7s, proxy.ts: 27ms, application-code: 53ms)
+ GET /sign-up/SignUp_clerk_catchall_check_1782906709666 200 in 214ms (next.js: 67ms, proxy.ts: 23ms, application-code: 124ms)
+ POST /sign-up/verify-email-address 200 in 112ms (next.js: 30ms, proxy.ts: 23ms, application-code: 58ms)
+  └─ ƒ invalidateCacheAction() in 2ms node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js
+ GET /sign-up/verify-email-address/SignUp_clerk_catchall_check_1782906981316 200 in 103ms (next.js: 9ms, proxy.ts: 17ms, application-code: 77ms)
+ GET / 200 in 534ms (next.js: 23ms, proxy.ts: 379ms, application-code: 132ms)
+ GET / 200 in 139ms (next.js: 9ms, proxy.ts: 27ms, application-code: 103ms)
+ GET /dashboard 200 in 224ms (next.js: 163ms, proxy.ts: 18ms, application-code: 44ms)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+ GET /dashboard 200 in 120ms (next.js: 16ms, proxy.ts: 28ms, application-code: 76ms)
+ GET /dashboard/saved-careers 200 in 618ms (next.js: 493ms, proxy.ts: 42ms, application-code: 82ms)
+ GET /dashboard/recommendations 200 in 181ms (next.js: 33ms, proxy.ts: 43ms, application-code: 105ms)
+ GET /dashboard/recommendations 200 in 40ms (next.js: 12ms, proxy.ts: 15ms, application-code: 12ms)
+ GET /dashboard/recommendations 200 in 71ms (next.js: 9ms, proxy.ts: 21ms, application-code: 41ms)
+ GET /dashboard/recommendations 200 in 76ms (next.js: 32ms, proxy.ts: 27ms, application-code: 17ms)
+ GET /dashboard/recommendations 200 in 54ms (next.js: 9ms, proxy.ts: 10ms, application-code: 34ms)
+ GET /dashboard/recommendations 200 in 57ms (next.js: 13ms, proxy.ts: 29ms, application-code: 15ms)
+ GET /dashboard/recommendations 200 in 47ms (next.js: 8ms, proxy.ts: 12ms, application-code: 27ms)
+ GET /dashboard/recommendations 200 in 32ms (next.js: 8ms, proxy.ts: 13ms, application-code: 10ms)
+ GET /dashboard/recommendations 200 in 83ms (next.js: 12ms, proxy.ts: 26ms, application-code: 45ms)
+ GET /dashboard/recommendations 200 in 75ms (next.js: 19ms, proxy.ts: 43ms, application-code: 13ms)
+ GET /dashboard/recommendations 200 in 63ms (next.js: 8ms, proxy.ts: 20ms, application-code: 35ms)
+ GET /dashboard/recommendations 200 in 30ms (next.js: 9ms, proxy.ts: 10ms, application-code: 12ms)
+ GET /dashboard/recommendations 200 in 67ms (next.js: 12ms, proxy.ts: 18ms, application-code: 37ms)
+ GET /dashboard/recommendations 200 in 119ms (next.js: 30ms, proxy.ts: 38ms, application-code: 51ms)
+ GET /dashboard/recommendations 200 in 78ms (next.js: 11ms, proxy.ts: 23ms, application-code: 43ms)
+ GET /dashboard/profile 200 in 177ms (next.js: 36ms, proxy.ts: 35ms, application-code: 106ms)
+ GET /dashboard/recommendations 200 in 81ms (next.js: 14ms, proxy.ts: 16ms, application-code: 52ms)
+ GET /careers/technical-writer 200 in 1375ms (next.js: 1209ms, proxy.ts: 24ms, application-code: 143ms)
+ GET /careers 200 in 517ms (next.js: 396ms, proxy.ts: 12ms, application-code: 110ms)
+ GET / 200 in 187ms (next.js: 13ms, proxy.ts: 31ms, application-code: 143ms)
+ GET /blog 200 in 625ms (next.js: 532ms, proxy.ts: 28ms, application-code: 65ms)
+ GET /about 200 in 2.6s (next.js: 2.5s, proxy.ts: 13ms, application-code: 54ms)
+ GET /contact 200 in 489ms (next.js: 422ms, proxy.ts: 12ms, application-code: 55ms)
+ GET / 200 in 132ms (next.js: 19ms, proxy.ts: 27ms, application-code: 86ms)
+✓ Compiled in 3.4s
+ GET / 200 in 853ms (next.js: 167ms, proxy.ts: 581ms, application-code: 105ms)
+✓ Compiled in 386ms
+ GET / 200 in 1264ms (next.js: 139ms, proxy.ts: 827ms, application-code: 298ms)
+ GET / 200 in 518ms (next.js: 6ms, proxy.ts: 197ms, application-code: 315ms)
+ GET / 200 in 266ms (next.js: 6ms, proxy.ts: 12ms, application-code: 248ms)
+ GET / 200 in 194ms (next.js: 11ms, proxy.ts: 18ms, application-code: 164ms)
+ GET / 200 in 194ms (next.js: 95ms, proxy.ts: 20ms, application-code: 79ms)
+✓ Compiled in 301ms
+ GET / 200 in 1098ms (next.js: 147ms, proxy.ts: 501ms, application-code: 450ms)
+ GET / 200 in 372ms (next.js: 32ms, proxy.ts: 51ms, application-code: 289ms)
+ GET / 200 in 238ms (next.js: 12ms, proxy.ts: 20ms, application-code: 205ms)
+ GET / 200 in 238ms (next.js: 65ms, proxy.ts: 23ms, application-code: 150ms)
+ GET / 200 in 237ms (next.js: 132ms, proxy.ts: 23ms, application-code: 82ms)
+✓ Compiled in 191ms
+ GET / 200 in 586ms (next.js: 188ms, proxy.ts: 296ms, application-code: 102ms)
+ GET / 200 in 740ms (next.js: 146ms, proxy.ts: 492ms, application-code: 102ms)
+ GET / 200 in 98ms (next.js: 7ms, proxy.ts: 14ms, application-code: 77ms)
+✓ Compiled in 3.2s
+ GET / 200 in 716ms (next.js: 145ms, proxy.ts: 267ms, application-code: 304ms)
+ GET / 200 in 191ms (next.js: 7ms, proxy.ts: 12ms, application-code: 171ms)
+ GET / 200 in 84ms (next.js: 10ms, proxy.ts: 10ms, application-code: 63ms)
+✓ Compiled in 298ms
+ GET / 200 in 1384ms (next.js: 143ms, proxy.ts: 635ms, application-code: 606ms)
+ GET / 200 in 538ms (next.js: 13ms, proxy.ts: 23ms, application-code: 502ms)
+ GET / 200 in 397ms (next.js: 69ms, proxy.ts: 33ms, application-code: 295ms)
+ GET / 200 in 398ms (next.js: 126ms, proxy.ts: 34ms, application-code: 238ms)
+ GET / 200 in 403ms (next.js: 13ms, proxy.ts: 34ms, application-code: 356ms)
+ GET / 200 in 403ms (next.js: 185ms, proxy.ts: 35ms, application-code: 183ms)
+✓ Compiled in 264ms
+ GET / 200 in 770ms (next.js: 148ms, proxy.ts: 518ms, application-code: 104ms)
+✓ Compiled in 214ms
+ GET / 200 in 748ms (next.js: 144ms, proxy.ts: 509ms, application-code: 95ms)
+✓ Compiled in 155ms
+ GET / 200 in 513ms (next.js: 158ms, proxy.ts: 248ms, application-code: 107ms)
+ GET / 200 in 107ms (next.js: 8ms, proxy.ts: 26ms, application-code: 74ms)
+✓ Compiled in 1210ms
+ GET / 200 in 1186ms (next.js: 128ms, proxy.ts: 585ms, application-code: 472ms)
+ GET / 200 in 387ms (next.js: 12ms, proxy.ts: 17ms, application-code: 357ms)
+ GET / 200 in 272ms (next.js: 13ms, proxy.ts: 25ms, application-code: 234ms)
+ GET / 200 in 271ms (next.js: 116ms, proxy.ts: 28ms, application-code: 127ms)
+ GET / 200 in 273ms (next.js: 65ms, proxy.ts: 26ms, application-code: 183ms)
+ GET / 200 in 273ms (next.js: 169ms, proxy.ts: 29ms, application-code: 75ms)
+⨯ ./components/home/HomeLanding.tsx:3:1
+Export StatisticsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export StatisticsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HomeLanding.tsx:3:1
+Export TestimonialsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export TestimonialsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+ GET / 500 in 1061ms (next.js: 368ms, proxy.ts: 226ms, application-code: 467ms)
+⨯ ./components/home/HomeLanding.tsx:3:1
+Export StatisticsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export StatisticsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HomeLanding.tsx:3:1
+Export TestimonialsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export TestimonialsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+ GET / 500 in 75ms (next.js: 27ms, proxy.ts: 23ms, application-code: 25ms)
+[browser] Uncaught Error: ./components/home/HomeLanding.tsx:3:1
+Export StatisticsSection doesn't exist in target module
+   1 | import type { Blog, Career } from '@/lib/types';
+   2 | import { HeroSection } from './HeroSection';
+>  3 | import {
+     | ^^^^^^^
+>  4 |   FAQSection,
+     | ^^^^^^^^^^^^^
+>  5 |   FeaturedCareersSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+>  6 |   FinalCTA,
+     | ^^^^^^^^^^^
+>  7 |   HowItWorksSection,
+     | ^^^^^^^^^^^^^^^^^^^^
+>  8 |   LatestArticlesSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |   StatisticsSection,
+     | ^^^^^^^^^^^^^^^^^^^^
+> 10 |   TestimonialsSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^
+> 11 | } from './HomeSections';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | type FAQ = { question: string; answer: string };
+  14 |
+
+The export StatisticsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+    at <unknown> (Error: ./components/home/HomeLanding.tsx:3:1)
+    at <unknown> (Error: (./components/home/HomeLanding.tsx:3:1)
+⨯ ./components/home/HomeLanding.tsx:3:1
+Export StatisticsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export StatisticsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HomeLanding.tsx:3:1
+Export TestimonialsSection doesn't exist in target module
+  [90m 1 |[0m [36mimport[0m [36mtype[0m { [33mBlog[0m, [33mCareer[0m } [36mfrom[0m [32m'@/lib/types'[0m;
+  [90m 2 |[0m [36mimport[0m { [33mHeroSection[0m } [36mfrom[0m [32m'./HeroSection'[0m;
+[31m[1m>[0m [90m 3 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m 4 |[0m   [33mFAQSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 5 |[0m   [33mFeaturedCareersSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 6 |[0m   [33mFinalCTA[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 7 |[0m   [33mHowItWorksSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 8 |[0m   [33mLatestArticlesSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m 9 |[0m   [33mStatisticsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m10 |[0m   [33mTestimonialsSection[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m11 |[0m } [36mfrom[0m [32m'./HomeSections'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m12 |[0m
+  [90m13 |[0m [36mtype[0m [33mFAQ[0m = { question: string; answer: string };
+  [90m14 |[0m
+
+The export TestimonialsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+ GET / 500 in 290ms (next.js: 33ms, proxy.ts: 240ms, application-code: 18ms)
+[browser] Uncaught Error: ./components/home/HomeLanding.tsx:3:1
+Export StatisticsSection doesn't exist in target module
+   1 | import type { Blog, Career } from '@/lib/types';
+   2 | import { HeroSection } from './HeroSection';
+>  3 | import {
+     | ^^^^^^^
+>  4 |   FAQSection,
+     | ^^^^^^^^^^^^^
+>  5 |   FeaturedCareersSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^
+>  6 |   FinalCTA,
+     | ^^^^^^^^^^^
+>  7 |   HowItWorksSection,
+     | ^^^^^^^^^^^^^^^^^^^^
+>  8 |   LatestArticlesSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  9 |   StatisticsSection,
+     | ^^^^^^^^^^^^^^^^^^^^
+> 10 |   TestimonialsSection,
+     | ^^^^^^^^^^^^^^^^^^^^^^
+> 11 | } from './HomeSections';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | type FAQ = { question: string; answer: string };
+  14 |
+
+The export StatisticsSection was not found in module [project]/components/home/HomeSections.tsx [app-rsc] (ecmascript).
+Did you mean to import LatestArticlesSection?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/HomeLanding.tsx
+    ./app/page.tsx
+
+
+    at <unknown> (Error: ./components/home/HomeLanding.tsx:3:1)
+    at <unknown> (Error: (./components/home/HomeLanding.tsx:3:1)
+✓ Compiled in 337ms
+[TypeError: fetch failed] {
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+[TypeError: fetch failed] {
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+ GET / 200 in 1893ms (next.js: 201ms, proxy.ts: 416ms, application-code: 1276ms)
+ GET / 200 in 196ms (next.js: 7ms, proxy.ts: 24ms, application-code: 164ms)
+✓ Compiled in 206ms
+ GET / 200 in 893ms (next.js: 165ms, proxy.ts: 600ms, application-code: 128ms)
+✓ Compiled in 103ms
+ GET / 200 in 633ms (next.js: 141ms, proxy.ts: 204ms, application-code: 288ms)
+ GET / 200 in 195ms (next.js: 9ms, proxy.ts: 11ms, application-code: 174ms)
+ GET / 200 in 103ms (next.js: 9ms, proxy.ts: 11ms, application-code: 83ms)
+✓ Compiled in 244ms
+ GET / 200 in 619ms (next.js: 136ms, proxy.ts: 193ms, application-code: 290ms)
+ GET / 200 in 660ms (next.js: 11ms, proxy.ts: 255ms, application-code: 394ms)
+ GET / 200 in 339ms (next.js: 9ms, proxy.ts: 13ms, application-code: 317ms)
+ GET / 200 in 257ms (next.js: 16ms, proxy.ts: 19ms, application-code: 222ms)
+ GET / 200 in 258ms (next.js: 146ms, proxy.ts: 24ms, application-code: 88ms)
+ GET / 200 in 261ms (next.js: 84ms, proxy.ts: 22ms, application-code: 155ms)
+[browser] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview (https://unified-turkey-72.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:12:6133)
+[browser] Image with src "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=85" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 547ms (next.js: 9ms, proxy.ts: 34ms, application-code: 504ms)
+[browser] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview (https://unified-turkey-72.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:12:6133)
+ GET /careers/data-scientist 200 in 560ms (next.js: 420ms, proxy.ts: 23ms, application-code: 118ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET / 200 in 204ms (next.js: 18ms, proxy.ts: 24ms, application-code: 162ms)
+ POST / 200 in 188ms (next.js: 13ms, proxy.ts: 50ms, application-code: 125ms)
+  └─ ƒ invalidateCacheAction() in 8ms node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js
+ GET / 200 in 35ms (next.js: 10ms, proxy.ts: 9ms, application-code: 16ms)
+ GET / 200 in 131ms (next.js: 12ms, proxy.ts: 19ms, application-code: 99ms)
+ GET / 200 in 110ms (next.js: 7ms, proxy.ts: 15ms, application-code: 89ms)
+ GET /sign-in 200 in 333ms (next.js: 281ms, proxy.ts: 13ms, application-code: 39ms)
+ GET /sign-in/SignIn_clerk_catchall_check_1782908786836 200 in 425ms (next.js: 10ms, proxy.ts: 18ms, application-code: 397ms)
+ POST /sign-in/factor-one 200 in 82ms (next.js: 23ms, proxy.ts: 13ms, application-code: 46ms)
+  └─ ƒ invalidateCacheAction() in 4ms node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js
+ GET /sign-in/factor-one/SignIn_clerk_catchall_check_1782908808150 200 in 107ms (next.js: 13ms, proxy.ts: 19ms, application-code: 75ms)
+ GET / 200 in 264ms (next.js: 6ms, proxy.ts: 187ms, application-code: 72ms)
+ GET / 200 in 109ms (next.js: 10ms, proxy.ts: 14ms, application-code: 85ms)
+ GET /dashboard 200 in 386ms (next.js: 184ms, proxy.ts: 58ms, application-code: 144ms)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(260) or minHeight(260) or use aspect(undefined) to control the
+       height and width.
+ GET /dashboard/saved-careers 200 in 242ms (next.js: 150ms, proxy.ts: 49ms, application-code: 43ms)
+ GET /admin/users 200 in 459ms (next.js: 324ms, proxy.ts: 36ms, application-code: 98ms)
+ GET /admin/content-review 200 in 507ms (next.js: 354ms, proxy.ts: 50ms, application-code: 102ms)
+○ Compiling /admin/user-activity ...
+ GET /admin/user-activity 200 in 3.7s (next.js: 3.6s, proxy.ts: 36ms, application-code: 67ms)
+ GET /admin/user-activity 200 in 85ms (next.js: 11ms, proxy.ts: 22ms, application-code: 52ms)
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[browser] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+○ Compiling /admin/analytics ...
+ GET /admin/ai-usage 200 in 1665ms (next.js: 1417ms, proxy.ts: 122ms, application-code: 126ms)
+ GET /admin/analytics 200 in 7.9s (next.js: 7.7s, proxy.ts: 41ms, application-code: 156ms)
+ GET /admin/analytics 200 in 11.9s (next.js: 11.6s, proxy.ts: 100ms, application-code: 194ms)
+ GET /admin/analytics 200 in 35.2s (next.js: 35.0s, proxy.ts: 17ms, application-code: 131ms)
+ GET /admin/analytics 200 in 200ms (next.js: 149ms, proxy.ts: 14ms, application-code: 38ms)
+ GET /admin/settings 200 in 34.2s (next.js: 34.2s, proxy.ts: 27ms, application-code: 29ms)
+ GET /admin/blogs 200 in 35.7s (next.js: 35.5s, proxy.ts: 51ms, application-code: 81ms)
+ GET /admin/blogs 200 in 12.2s (next.js: 12.1s, proxy.ts: 37ms, application-code: 115ms)
+ GET /admin/blogs 200 in 12.0s (next.js: 11.9s, proxy.ts: 28ms, application-code: 58ms)
+ GET /admin/blogs 200 in 7.1s (next.js: 7.0s, proxy.ts: 10ms, application-code: 31ms)
+ GET /admin/blogs 200 in 13.4s (next.js: 12.4s, proxy.ts: 41ms, application-code: 893ms)
+ GET /admin/blogs 200 in 950ms (next.js: 51ms, proxy.ts: 39ms, application-code: 860ms)
+ GET /admin/blogs 200 in 949ms (next.js: 75ms, proxy.ts: 41ms, application-code: 834ms)
+ GET /admin/blogs 200 in 951ms (next.js: 74ms, proxy.ts: 76ms, application-code: 801ms)
+ GET /admin/reports 200 in 37.5s (next.js: 37.4s, proxy.ts: 24ms, application-code: 56ms)
+✓ Finished writing to filesystem cache in 11.5s
+✓ Finished filesystem cache database compaction in 15.8s
+ GET / 200 in 971ms (next.js: 32ms, proxy.ts: 573ms, application-code: 367ms)
+✓ Compiled in 4s
+ GET / 200 in 3.3s (next.js: 889ms, proxy.ts: 62ms, application-code: 2.4s)
+ GET / 200 in 3.6s (next.js: 549ms, proxy.ts: 2.3s, application-code: 670ms)
+ GET / 200 in 506ms (next.js: 9ms, proxy.ts: 162ms, application-code: 335ms)
+ GET / 200 in 254ms (next.js: 9ms, proxy.ts: 14ms, application-code: 232ms)
+✓ Compiled in 466ms
+ GET / 200 in 690ms (next.js: 163ms, proxy.ts: 300ms, application-code: 228ms)
+ GET / 200 in 89ms (next.js: 7ms, proxy.ts: 15ms, application-code: 66ms)
+✓ Compiled in 934ms
+ GET / 200 in 905ms (next.js: 179ms, proxy.ts: 257ms, application-code: 470ms)
+ GET / 200 in 341ms (next.js: 10ms, proxy.ts: 18ms, application-code: 313ms)
+✓ Compiled in 1828ms
+ GET / 200 in 849ms (next.js: 176ms, proxy.ts: 556ms, application-code: 117ms)
+ GET / 200 in 2.9s (next.js: 6ms, proxy.ts: 15ms, application-code: 2.9s)
+ GET / 200 in 323ms (next.js: 15ms, proxy.ts: 38ms, application-code: 271ms)
+[browser] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview (https://unified-turkey-72.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:12:6133)
+[browser] Image with src "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 752ms (next.js: 243ms, proxy.ts: 113ms, application-code: 396ms)
+ GET / 200 in 1307ms (next.js: 215ms, proxy.ts: 513ms, application-code: 579ms)
+ GET / 200 in 440ms (next.js: 15ms, proxy.ts: 26ms, application-code: 399ms)
+ GET / 200 in 142ms (next.js: 18ms, proxy.ts: 24ms, application-code: 99ms)
+ GET /careers 200 in 1168ms (next.js: 908ms, proxy.ts: 24ms, application-code: 236ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /careers/platform-engineer 200 in 621ms (next.js: 530ms, proxy.ts: 34ms, application-code: 57ms)
+ GET /careers 200 in 74ms (next.js: 9ms, proxy.ts: 17ms, application-code: 48ms)
+ GET / 200 in 267ms (next.js: 24ms, proxy.ts: 22ms, application-code: 221ms)
+ GET /careers/data-analyst 200 in 154ms (next.js: 62ms, proxy.ts: 41ms, application-code: 51ms)
+ GET / 200 in 97ms (next.js: 9ms, proxy.ts: 14ms, application-code: 74ms)
+ GET /careers/data-scientist 200 in 124ms (next.js: 43ms, proxy.ts: 15ms, application-code: 66ms)
+ GET /careers 200 in 89ms (next.js: 11ms, proxy.ts: 18ms, application-code: 60ms)
+ GET / 200 in 140ms (next.js: 7ms, proxy.ts: 29ms, application-code: 103ms)

@@ -6,7 +6,7 @@ export const userSyncSchema = z.object({
   firstName: z.string().default('Career'),
   lastName: z.string().default('Explorer'),
   avatarUrl: z.string().url().optional(),
-  selectedRole: z.enum(['user']).default('user'),
+  selectedRole: z.enum(['user', 'admin']).default('user'),
 });
 
 export const userUpdateSchema = z.object({

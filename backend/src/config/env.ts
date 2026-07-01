@@ -5,7 +5,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   FRONTEND_URL: z.string().url().default('http://localhost:3000'),
   MONGODB_URI: z.string().min(1).default('mongodb://127.0.0.1:27017/careercoach-ai'),
-  CLERK_SECRET_KEY: z.string().optional(),
+  CLERK_SECRET_KEY: z.string().min(1, 'CLERK_SECRET_KEY is required for authentication'),
   GEMINI_API_KEY: z.string().optional(),
   GEMINI_MODEL: z.string().default('gemini-2.0-flash'),
   GEMINI_API_URL: z.string().url().default('https://generativelanguage.googleapis.com/v1beta/models'),

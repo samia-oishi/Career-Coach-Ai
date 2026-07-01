@@ -4,6 +4,9 @@ import { Navbar } from '@/components/layout/Navbar';
 import { fetchCareers } from '@/lib/api';
 import { fallbackCareers } from '@/lib/data';
 import { SaveCareerButton } from '@/features/careers/SaveCareerButton';
+import { ReviewForm } from '@/features/careers/ReviewForm';
+import { ReviewsList } from '@/features/careers/ReviewsList';
+import { CareerRoadmap } from '@/features/careers/CareerRoadmap';
 import { formatSalary } from '@/lib/utils';
 
 export default async function CareerDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -29,10 +32,27 @@ export default async function CareerDetailsPage({ params }: { params: Promise<{ 
             <div className="mt-6"><SaveCareerButton careerId={career._id} /></div>
           </aside>
         </section>
-        <section className="mt-10 grid gap-6 md:grid-cols-2"><Info title="Required skills" items={career.requiredSkills} /><Info title="Responsibilities" items={career.responsibilities} /><Info title="Career growth" items={career.careerGrowth} /><Info title="Learning path" items={career.learningPath} /></section>
+        <section className="mt-10 grid gap-6 md:grid-cols-2"><Info title="Required skills" items={career.requiredSkills} /><Info title="Responsibilities" items={career.responsibilities} /><Info title="Career growth" items={career.careerGrowth} /><Info title="Tools & Technologies" items={career.tools} /></section>
+        
+        <section className="mt-8">
+          <CareerRoadmap 
+            careerSlug={career.slug} 
+            careerTitle={career.title}
+            difficulty={career.difficulty}
+          />
+        </section>
+        
         <section className="card-surface mt-8 p-6"><h2 className="text-2xl font-bold">Salary information</h2><p className="mt-3" style={{ color: 'var(--muted)' }}>{career.salaryInformation}</p></section>
-        <section className="mt-8"><h2 className="text-2xl font-bold">Reviews</h2><div className="card-surface mt-4 p-6"><p style={{ color: 'var(--muted)' }}>Reviews appear here after signed-in users submit feedback and admins approve it.</p></div></section>
-        <section className="mt-8"><h2 className="text-2xl font-bold">Related careers</h2><div className="mt-4 grid gap-4 md:grid-cols-3">{related.map((item) => <Link className="card-surface p-5" href={`/careers/${item.slug}`} key={item.slug}><h3 className="font-bold">{item.title}</h3><p className="mt-2 text-sm" style={{ color: 'var(--muted)' }}>{item.description}</p></Link>)}</div></section>
+        
+        <section className="mt-10">
+          <h2 className="text-2xl font-bold">Reviews</h2>
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_400px]">
+            <ReviewsList careerId={career._id!} />
+            <ReviewForm careerId={career._id!} />
+          </div>
+        </section>
+        
+        <section className="mt-10"><h2 className="text-2xl font-bold">Related careers</h2><div className="mt-4 grid gap-4 md:grid-cols-3">{related.map((item) => <Link className="card-surface p-5" href={`/careers/${item.slug}`} key={item.slug}><h3 className="font-bold">{item.title}</h3><p className="mt-2 text-sm" style={{ color: 'var(--muted)' }}>{item.description}</p></Link>)}</div></section>
       </main>
       <Footer />
     </>
