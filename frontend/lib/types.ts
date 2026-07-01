@@ -18,6 +18,9 @@ export type Career = {
   learningPath: string[];
   relatedCareerSlugs: string[];
   isFeatured: boolean;
+  status?: 'draft' | 'published' | 'archived';
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type Blog = {
@@ -31,7 +34,10 @@ export type Blog = {
   tags: string[];
   authorName: string;
   readTimeMinutes: number;
+  status: 'draft' | 'published' | 'archived';
   publishedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type AppUser = {
